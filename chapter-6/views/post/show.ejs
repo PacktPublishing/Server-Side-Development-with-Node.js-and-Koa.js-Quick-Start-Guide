@@ -1,0 +1,19 @@
+<%- include( '../partials/header.ejs' ) -%> 
+<h2 class="title"><%= post.title %></h2>
+
+<div class="columns">
+  <div class="column is-2">
+    <img src="<%= post.image %>" alt="<%= post.title %>">
+    <h5 class="subtitle">
+      <small>by <%= post.author.fullName %></small>
+    </h5>
+    <% if (locals.user && (post.author.id == user._id)) { -%>
+    <p><small><a href="/post/<%= post.id %>/edit">Edit Post</a></small></p>
+    <% } -%>
+  </div>
+
+  <div class="column">
+    <p><%= post.content %></p>
+  </div>
+</div>
+<%- include( '../partials/footer.ejs' ) -%> 

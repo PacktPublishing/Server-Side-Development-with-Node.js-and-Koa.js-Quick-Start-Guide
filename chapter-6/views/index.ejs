@@ -1,0 +1,27 @@
+<%- include( 'partials/header.ejs' ) -%>  
+<div class="columns">
+  <% posts.forEach(post => { %>
+
+  <div class="column is-one-third">
+    <div class="card">
+      <div class="card-content">
+        <p class="title">
+          <%= post.title %>
+        </p>
+        <p class="subtitle">
+          <small>by <%= post.author.fullName %></small>
+        </p>
+      </div>
+      <footer class="card-footer">
+        <p class="card-footer-item">
+          <span>
+            <a href="/post/<%= post.id %>">View Post</a>
+          </span>
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <% }); %>
+</div>
+<%- include( 'partials/footer.ejs' ) -%>  

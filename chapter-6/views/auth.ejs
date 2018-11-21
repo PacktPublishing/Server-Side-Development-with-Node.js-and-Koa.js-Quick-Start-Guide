@@ -1,0 +1,58 @@
+<%- include( 'partials/header.ejs' ) -%> 
+<div class="columns">
+  <div class="column">
+    <h1 class="title">Register</h1>
+
+    <form action="/auth/register" method="POST">
+      <div class="field">
+        <label class="label">Full Name</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="e.g Alex Smith" name="fullName">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com" name="email">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+          <input class="input" type="password" name="password">
+        </div>
+      </div>
+
+      <div class="control">
+        <button class="button is-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="column">
+    <h1 class="title">Login</h1>
+
+    <form action="/auth/login" method="POST">
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com" name="email">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+          <input class="input" type="password" name="password">
+        </div>
+      </div>
+
+      <div class="control">
+        <button class="button is-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include( 'partials/footer.ejs' ) -%> 
