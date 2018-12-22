@@ -9,12 +9,6 @@ const postController = require('../controllers/PostController');
 const router = new KoaRouter();
 router.use(user());
 
-// base routes.
-// authentication not required
-router
-  .get('/', postController.index)
-  .get('/post/:id', postController.show);
-
 // auth routes
 const auth = new KoaRouter()
   .get('/', guest(), authController.index)
@@ -32,5 +26,11 @@ posts
   .put('/:id', postController.update)
   .get('/:id/edit', postController.edit);
 router.use('/post', posts.routes());
+
+// base routes.
+// authentication not required
+router
+  .get('/', postController.index)
+  .get('/post/:id', postController.show);
 
 module.exports = router;
